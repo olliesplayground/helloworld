@@ -39,3 +39,12 @@ docker-compose up
 Then in a web browser go to http://localhost:8080/
 
 Again, it's possible to specify other locales by using a `locale` URL parameter, e.g. http://localhost:8080/?locale=fr
+
+### SASS
+
+SASS stylesheets can be found in the `resources/scss` directory. Any changes to stylesheets will need to be compiled to CSS, 
+this can be done using SASS, like below (for example)
+ 
+```
+sass --watch resources/scss/helloworld.scss public/assets/css/helloworld.css
+```
