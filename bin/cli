@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+
+<?php
+
+use Clinch\Options;
+
+define('BIN_DIR', __DIR__);
+define('PROJECT_ROOT', BIN_DIR . '/../');
+
+require_once PROJECT_ROOT . 'bootstrap.php';
+
+$options = new Options();
+$options
+    ->newOption($config['cli_options']['locale']['short'])
+    ->setLongName($config['cli_options']['locale']['long']);
+
+$locale = $options->getOptionValue($config['cli_options']['locale']['short']);
+$locale = $locale === false ? null : $locale;
+
+try {
+    echo $twig->render('layouts/cli.twig', [
+        'hello_world' => $expression->sayHello($locale)
+    ]);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}

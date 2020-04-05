@@ -1,0 +1,11 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  background-color: #FFF;
+}
+body #content {
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=helloworld.css.map */
